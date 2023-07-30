@@ -1,0 +1,153 @@
+@use "./variables" as v;
+
+body {
+    background-color: v.$light-grayish-blue;
+    font-family: v.$font-family;
+    font-size: v.$font-size;
+
+    @include v.desktop {
+        padding: 6.25rem;
+    }
+
+    @include v.mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+
+    @include v.desktop {
+        border-radius: 0.625rem;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    @include v.mobile {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 1.25rem;
+        row-gap: 1.5rem;
+        height: 100%
+    }
+}
+
+.item {
+    border-radius: 0.625rem;
+}
+
+img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    border: 0.125rem solid v.$white;
+    float: left;
+}
+
+.name {
+    color: v.$white;
+    font-size: 16px;
+    padding-left: 3.75rem;
+}
+
+.verified {
+    color: v.$white;
+    opacity: 50%;
+    padding-left: 3.75rem;
+}
+
+.alias {
+    color: v.$very-dark-blackish-blue;
+    font-size: 16px;
+}
+
+.confirmed {
+    color: v.$very-dark-grayish-blue;
+    opacity: 50%;
+}
+
+/* paragraps*/
+.review-comment-white {
+    color: v.$white;
+    font-size: 22.4px;
+    padding-bottom: 1.25rem;
+}
+
+.review-paragraphs-white {
+    color: v.$white;
+    opacity: 70%;
+    padding-bottom: 0.625rem;
+}
+
+.review-comment {
+    color: v.$very-dark-blackish-blue;
+    font-size: 22.4px;
+    padding-bottom: 1.25rem;
+}
+
+.review-paragraphs {
+    color: v.$very-dark-grayish-blue;
+    opacity: 70%;
+    padding-bottom: 1.25rem;
+}
+
+/* individual contianers */
+.min-container1 {
+    background-color: v.$moderate-violet;
+    background-image: url("./../../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: right 10% top 0;
+
+    @include v.desktop {
+        background-position: right 20% top 0;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+.min-container2 {
+    background-color: v.$very-dark-grayish-blue;
+}
+
+.min-container4 {
+    background-color: v.$very-dark-blackish-blue;
+
+    @include v.desktop {
+        grid-column-start: 2;
+        grid-column-end: span 2;
+    }
+}
+
+.min-container3,
+.min-container5 {
+    background-color: v.$white;
+}
+
+.min-container3 {
+    @include v.desktop {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+}
+
+.min-container5 {
+    @include v.desktop {
+        grid-column-start: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}
+
+/* items within min-containers */
+.inner-item {
+    padding: 0.938rem 1.25rem 0.625rem 1.25rem;
+}
+
+.review-item {
+    padding: 0rem 1.25rem 1.25rem;
+}
